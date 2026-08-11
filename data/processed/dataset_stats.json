@@ -1,0 +1,37 @@
+{
+  "seed": 42,
+  "source_dataset": "bitext/Bitext-retail-banking-llm-chatbot-training-dataset",
+  "source_license": "CDLA-Sharing-1.0",
+  "source_rows_total": 25545,
+  "candidate_pool_before_cleaning": 520,
+  "cleaning_pipeline": {
+    "0_candidate_pool_size": 520,
+    "1_placeholder_tokens_resolved": 744,
+    "2_after_length_filter": 520,
+    "3_after_duplicate_removal": 520,
+    "3a_duplicates_removed_count": 0,
+    "4_after_unresolved_placeholder_safety_check": 520
+  },
+  "final_dataset_size_before_split": 338,
+  "final_counts": {
+    "train": 286,
+    "val": 26,
+    "test": 26,
+    "total": 338
+  },
+  "split_ratio": "80/10/10 (stratified by intent)",
+  "num_intents_covered": 26,
+  "num_categories_covered": 9,
+  "instruction_length_words": {
+    "count": 338,
+    "mean_words": 11.12,
+    "min_words": 5,
+    "max_words": 20
+  },
+  "response_length_words": {
+    "count": 338,
+    "mean_words": 146.09,
+    "min_words": 38,
+    "max_words": 403
+  }
+}

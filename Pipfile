@@ -1,0 +1,41 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://download.pytorch.org/whl/cu132"
+verify_ssl = true
+name = "downloadpytorch"
+
+[packages]
+# Notebook runtime/export -- notebooks are the primary deliverable (Tasks 1-5),
+# not just dev tooling, so these live in [packages] rather than [dev-packages].
+jupyter = ">=1.0"
+nbconvert = ">=7.16"
+ipykernel = ">=6.29"
+# Core ML stack for LoRA/QLoRA fine-tuning and inference (Tasks 2-5).
+transformers = ">=4.44"
+accelerate = ">=0.33"
+peft = ">=0.12"
+bitsandbytes = ">=0.43"
+datasets = ">=2.19"
+# Data preparation (Task 1) -- CPU-only, no GPU required.
+numpy = "*"
+pandas = "*"
+huggingface-hub = ">=0.24"
+# Visualisation
+matplotlib = "*"
+# Evaluation (Task 5)
+scikit-learn = "*"
+bert-score = "*"  # optional semantic-similarity metric alongside ROUGE-L; see Notebook 05
+torch = {version = "*", index = "downloadpytorch"}
+torchtext = {version = "*", index = "downloadpytorch"}
+
+[dev-packages]
+# Notebook validation only (used by e.g. `nbformat.validate(...)` sanity checks) -- not needed to
+# run the pipeline itself.
+nbformat = "*"
+
+[requires]
+python_version = "3.14"

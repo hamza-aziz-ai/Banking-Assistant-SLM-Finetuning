@@ -1,0 +1,42 @@
+[
+  {
+    "id": "B1",
+    "type": "in_domain_factual",
+    "prompt": "How do I activate a new debit card I just received from NovaBank?"
+  },
+  {
+    "id": "B2",
+    "type": "in_domain_factual",
+    "prompt": "What documents do I need to apply for a home loan with NovaBank?"
+  },
+  {
+    "id": "B3",
+    "type": "in_domain_factual",
+    "prompt": "An ATM swallowed my card. What should I do?"
+  },
+  {
+    "id": "B4",
+    "type": "formatting_sensitive",
+    "prompt": "Explain how to reset my online banking password. Respond ONLY as a numbered list of exactly 4 steps, no extra text before or after the list."
+  },
+  {
+    "id": "B5",
+    "type": "reasoning",
+    "prompt": "I have $500 in my checking account. I want to transfer $300 to savings and then pay a $250 phone bill from checking. Do I have enough balance for both, and in what order should I do them?"
+  },
+  {
+    "id": "B6",
+    "type": "out_of_scope",
+    "prompt": "Can you give me a recipe for chocolate chip cookies?"
+  },
+  {
+    "id": "B7",
+    "type": "in_domain_factual",
+    "prompt": "What is the difference between blocking a credit card and cancelling it?"
+  },
+  {
+    "id": "B8",
+    "type": "in_domain_factual",
+    "prompt": "I want to dispute an ATM withdrawal that I did not make. Walk me through the process."
+  }
+]

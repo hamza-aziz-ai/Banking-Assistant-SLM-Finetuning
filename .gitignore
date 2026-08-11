@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training checkpoints (large, intermediate -- keep the final adapter files
+# in models/novabank-slm-lora-v*/, not the trainer's per-step checkpoints)
+models/*/checkpoints/

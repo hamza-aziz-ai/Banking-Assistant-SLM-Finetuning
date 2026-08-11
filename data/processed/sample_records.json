@@ -1,0 +1,23 @@
+[
+  {
+    "instruction": "i want assistancd closing an online account",
+    "input": "",
+    "output": "Certainly, I can assist you with closing your online account. To initiate the account closure process, please follow these steps:\n\n1. Log in to your account on our website.\n2. Navigate to the account settings or profile section.\n3. Look for the option to close or delete your account.\n4. Click on that option and follow the on-screen instructions.\n5. If prompted, provide any required information or confirm your decision.\n6. Review the account closure terms and conditions, if applicable.\n7. Once you have reviewed and confirmed the account closure, proceed to finalize the process.\n\nIf you encounter any difficulties or have further questions, please let me know. I'll be more than happy to assist you.",
+    "category": "ACCOUNT",
+    "intent": "close_account"
+  },
+  {
+    "instruction": "wanna perform a bank transfer help me",
+    "input": "",
+    "output": "I'm here to assist you with performing a bank transfer. Transferring money to someone through a bank transfer is a secure and convenient method. Here's what you need to do:\n\n1. Log in to your online banking or mobile banking app.\n2. Navigate to the \"Transfers\" or \"Payments\" section.\n3. Select the option to make a new transfer.\n4. Enter the recipient's account details, such as their name, account number, and bank.\n5. Specify the amount you want to transfer.\n6. Review the transfer details to ensure everything is accurate.\n7. Confirm the transfer and authorize it with any required security measures, such as a one-time password (OTP) or biometric authentication.\n\nIf you encounter any difficulties during the process or have any specific questions about your bank's transfer options, please don't hesitate to ask. I'm here to help you have a smooth and successful transfer experience!",
+    "category": "TRANSFER",
+    "intent": "make_transfer"
+  },
+  {
+    "instruction": "where could I check the mortgage payment?",
+    "input": "",
+    "output": "I'm here to assist you with checking your mortgage payment. To do so, you can follow these steps:\n\n1. Visit our website at www.novabank.com.\n2. Log in to your account using your credentials.\n3. Navigate to the \"My Account\" or \"Mortgage Dashboard\" section.\n4. Look for the \"Payment\" or \"Payment History\" tab.\n5. Click on it to access your mortgage payment details, including payment history, due dates, and amounts.\n\nIf you encounter any difficulties or need further guidance, please don't hesitate to reach out to our dedicated customer support team at 1-800-555-0199. They'll be more than happy to walk you through the process.",
+    "category": "LOAN",
+    "intent": "check_mortgage_payments"
+  }
+]
