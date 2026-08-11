@@ -72,7 +72,9 @@ maximising LoRA training data.
    but not every edge case; the frozen benchmark's out-of-scope prompt (B6) specifically probes what
    happens outside this coverage -- and, as Tasks 4-5 show below, this risk materialized directly.
 
-[Insert `img/dataset_stats.png` and `img/split_distribution.png`]
+![Dataset statistics -- length distributions and per-category counts](../img/dataset_stats.png)
+
+![Train/val/test split distribution](../img/split_distribution.png)
 
 ---
 
@@ -155,7 +157,7 @@ which is what makes fine-tuning fit in well under the ~6GB budget of a modest GP
 Training/validation loss (`img/v1_training_loss.png`) decreased smoothly across 3 epochs, eval loss
 0.894 -> 0.850 -> 0.839, with no sign of divergence or overfitting blow-up at this epoch count.
 
-[Insert `img/v1_training_loss.png`]
+![v1 training/validation loss curve](../img/v1_training_loss.png)
 
 **Saved model path:** `models/novabank-slm-lora-v1/`
 
@@ -208,7 +210,7 @@ rather than retrofitted here, to avoid changing three things in one iteration.
 only the training set changed (286 -> 321 examples: +20 format, +15 refusal). Eval loss 0.888 -> 0.845
 -> 0.837, comparable convergence to v1. Saved to `models/novabank-slm-lora-v2/`.
 
-[Insert `img/v2_training_loss.png`]
+![v2 training/validation loss curve](../img/v2_training_loss.png)
 
 **v1-vs-v2 comparison (before/after per diagnosed weakness):**
 
