@@ -17,6 +17,13 @@ import os
 # ---------------------------------------------------------------------------
 os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
+# hf_transfer: Rust-based multi-connection downloader for the Hugging Face
+# Hub. The default single-connection downloader repeatedly dropped and
+# restarted (never resumed) mid-way through the ~15GB Qwen2.5-7B-Instruct
+# download on this network, leaving 50GB of dead .incomplete shards without
+# ever completing. hf_transfer's chunked/resumable transfer fixes that.
+os.environ.setdefault("HF_HUB_ENABLE_HF_TRANSFER", "1")
+
 # ---------------------------------------------------------------------------
 # Reproducibility
 # ---------------------------------------------------------------------------
@@ -55,10 +62,15 @@ SLM_MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
 #   (bitsandbytes NF4) quantisation for inference-only use -- tested against
 #   a 6GB-class card (RTX 4050 Laptop / Virtual Lab T4), leaves ~0.5-1GB
 #   headroom for KV cache at GENERATION_KWARGS' max_new_tokens=300.
-#   `device_map="auto"` (model_utils.load_causal_lm) offloads overflow
-#   layers to CPU instead of OOMing if that headroom isn't there. If still
-#   too tight, swap to "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4" or an API-based
-#   model (see README "Reference LLM alternatives").
+#   model_utils.load_causal_lm forces single-GPU placement for 4-bit loads
+#   (device_map={"": 0}) rather than "auto" -- `infer_auto_device_map`'s
+#   conservative padding otherwise splits this model across GPU+CPU on a
+#   6GB card even though the weights (~3.8GB, no double-quant math) fit
+#   whole on the ~5.1GB actually free, and that CPU-offload split hits
+#   real accelerate/bitsandbytes hook bugs on this version pairing. If it
+#   genuinely doesn't fit on your card, swap to
+#   "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4" or an API-based model (see README
+#   "Reference LLM alternatives").
 REFERENCE_LLM_MODEL_ID = "Qwen/Qwen2.5-7B-Instruct"
 
 # ---------------------------------------------------------------------------

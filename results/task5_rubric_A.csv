@@ -1,0 +1,73 @@
+prompt_id,prompt_type,system,response,domain_correctness,instruction_format_adherence,completeness,hallucination
+B1,in_domain_factual,A_base_slm,"To activate your new debit card at NovaBank, follow these steps:
+
+1. **Review Your Account Information**: Before proceeding, make sure you have all necessary information such as your account number, PIN, and any other required documents.
+
+2. **Log in to Your Online Banking or Mobile App**: Go to the NovaBank website or download their mobile app on your device. Log in using your login credentials.
+
+3. **Navigate to the Card Activation Section**: Once logged in, look for an option related to card activation within your account dashboard. This might be under ""My Accounts,"" ""Card Services,"" or similar sections.
+
+4. **Select the Debit Card Option**: Choose the option that allows you to activate your debit card. You may need to select the specific card type if there are multiple cards associated with your account.
+
+5. **Enter Required Information**: Follow the prompts to enter your personal identification numbers (PIN) and any additional details needed by the system.
+
+6. **Complete Verification Steps**: Depending on the method of verification provided by NovaBank, complete the verification process. This could involve answering security questions, entering a code sent to your phone, or providing biometric data like fingerprints.
+
+7. **Activate Your Card**: After completing the verification step, proceed to activate your debit card. This typically involves confirming that you understand the terms and conditions and agreeing to receive future statements via email or text.
+
+8. **Check Your Statement**: Once activated, check your statement to ensure everything has been set",2,2,1,2
+B2,in_domain_factual,A_base_slm,"To apply for a home loan with NovaBank, you typically need to provide the following documents:
+
+1. **Identification**: A valid government-issued ID such as a passport or driver's license.
+2. **Proof of Income**: Recent pay stubs or tax returns showing your income over the past two years.
+3. **Credit Report**: A copy of your credit report from one of the major credit bureaus (Equifax, Experian, or TransUnion).
+4. **Employment Verification**: Proof of employment, such as a recent letter from your employer confirming your current position and salary.
+5. **Home Purchase Agreement**: A signed agreement outlining the terms of the purchase of your property.
+6. **Willingness to Pay**: Evidence that you have the ability to repay the loan, often shown by a down payment on the property.
+
+Itâ€™s also advisable to bring these documents in person when applying at a branch, but if you prefer, you can submit them via mail or online through NovaBank's application portal.",1,2,2,2
+B3,in_domain_factual,A_base_slm,"If your ATM swallowed your card, it's important to act quickly:
+
+1. **Contact Your Bank**: Reach out to your bank immediately. They will guide you on what to do next.
+
+2. **Report It to the ATM Manufacturer**: Contact the manufacturer of the ATM where your card was swallowed for further instructions or assistance.
+
+3. **Keep Track of Any Attempts to Retrieve Your Card**: Note any attempts by others to retrieve your card from the machine.
+
+4. **Follow Up**: Keep in touch with both your bank and the ATM manufacturer to ensure that they have taken appropriate action regarding your lost card.
+
+5. **Consider Using an Alternative ATM**: If possible, use another ATM to withdraw money until your card is retrieved.
+
+Remember, itâ€™s crucial to follow these steps as soon as possible to minimize potential risks and losses.",1,2,2,1
+B4,formatting_sensitive,A_base_slm,"1. Log in to your NovaBank account.
+2. Click on ""My Account"" or ""Profile.""
+3. Look for an option labeled ""Change Password"" or similar.
+4. Follow the instructions provided by clicking ""Reset Password.""",2,2,2,2
+B5,reasoning,A_base_slm,"Yes, you have enough balance for both transactions. You would first transfer $300 from your checking account to your savings account, leaving you with $200 in your checking account. Then, you could use that remaining $200 to pay your $250 phone bill from your checking account.
+
+Here's how it works:
+1. Transfer $300 from your checking account to your savings account.
+2. Use the remaining $200 in your checking account to cover the $250 phone bill.
+
+Remember to check if there are any transaction limits or restrictions on transferring funds between accounts at NovaBank.",1,2,1,0
+B6,out_of_scope,A_base_slm,"I'm sorry, but I can't assist with that. My capabilities are limited to providing information related to NovaBank's banking services such as cards, loans, mortgages, accounts, transfers, ATMs, passwords, and fees. I don't have the ability to provide recipes or any other non-financial content.",2,2,2,2
+B7,in_domain_factual,A_base_slm,"Blocking a credit card involves temporarily preventing transactions from being processed on your account while keeping the card itself active for future use. This action allows you to manage your spending more effectively by stopping unauthorized charges or fraudulent activities.
+
+Cancelling a credit card means permanently ending all access to that particular card. Once cancelled, the card will no longer be usable for any transactions, including those made in person at an ATM or online through our website or mobile app. Cancelling a card also removes its associated security features like PIN protection, which may need to be reactivated if you decide to reopen the card later.
+
+Both actions have different implications depending on how they affect your financial situation and personal preferences regarding card usage. Blocking helps maintain control over your funds during emergencies, whereas cancellation completely stops using the card altogether.",2,2,2,2
+B8,in_domain_factual,A_base_slm,"Certainly! To dispute an ATM withdrawal that you didn't make, follow these steps:
+
+1. **Review Your Statement**: First, check your recent bank statement for any transactions that might have been made at an ATM or another location where withdrawals were processed.
+
+2. **Contact Your Bank**: Reach out to your bank's customer service department. You can usually do this by phone, email, or online chat. Provide them with details of the transaction, including the date, amount, and location.
+
+3. **File a Dispute**: Once you've identified the incorrect transaction, file a formal dispute with your bank. This will typically involve providing documentation such as your account information, the disputed transaction details, and possibly a copy of your identification.
+
+4. **Follow Up**: After submitting your dispute, keep track of any communications from your bank regarding their investigation. Itâ€™s important to stay in touch with them throughout the process.
+
+5. **Wait for Resolution**: The bank has 60 days to investigate the dispute and either agree or disagree with it. During this time, they may contact you to gather more information or ask for additional documents.
+
+6. **Receive a Response**: Depending on how quickly your bank processes disputes, you should receive a response within the 60-day period. If your bank agrees that the transaction was fraudulent, they will reverse it and issue you a refund.
+
+7. **Keep Records**: Throughout the entire process, maintain all correspondence and records related to the dispute. These documents will",2,2,1,1

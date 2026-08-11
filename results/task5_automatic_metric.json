@@ -1,0 +1,7 @@
+{
+  "metric": "ROUGE-L F1",
+  "n_test_examples": 26,
+  "A_base_slm_mean": 0.1773658426189407,
+  "C_finetuned_slm_v2_mean": 0.3108474314832464,
+  "delta_C_minus_A": 0.1334815888643057
+}

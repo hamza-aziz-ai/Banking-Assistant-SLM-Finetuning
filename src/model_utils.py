@@ -42,6 +42,19 @@ def load_causal_lm(model_id: str, quantize_4bit: bool = False, device_map: str =
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    # `device_map="auto"` conservatively pads its per-device memory budget
+    # and, on a near-full 6GB card, decides to split the 4-bit model across
+    # GPU+CPU even though it fits whole on the GPU (~3.8GB weights, no
+    # double-quant, well under the ~5.1GB actually free). That CPU-offload
+    # split then hits real bugs in this accelerate/bitsandbytes version
+    # pairing -- three different crashes (state-dict validation, a meta
+    # tensor in the nested quant state, then a meta tensor mid-`generate`)
+    # each one layer deeper than the last. Forcing everything onto one GPU
+    # sidesteps the whole offload-hook code path; if it genuinely doesn't
+    # fit this raises a plain CUDA OOM instead of a confusing hook error.
+    if quantize_4bit and device_map == "auto" and torch.cuda.is_available() and torch.cuda.device_count() == 1:
+        device_map = {"": 0}
+
     load_kwargs = dict(device_map=device_map, torch_dtype=torch.bfloat16)
     if quantize_4bit:
         from transformers import BitsAndBytesConfig
@@ -102,7 +115,16 @@ def generate_response(model, tokenizer, prompt_text: str, **generation_kwargs) -
             **generation_kwargs,
         )
     new_tokens = output_ids[0][inputs["input_ids"].shape[1]:]
-    return tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    response = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+
+    # Free the KV cache tensors from this call before the next one. On a
+    # near-full 6GB card, back-to-back generate() calls of varying prompt/
+    # response length otherwise accumulate allocator fragmentation across
+    # a benchmark loop (8 prompts) until an allocation fails.
+    del output_ids, inputs
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+    return response
 
 
 def count_trainable_parameters(model):

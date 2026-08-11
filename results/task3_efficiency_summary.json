@@ -1,0 +1,8 @@
+{
+  "trainable_params": 2179072,
+  "total_params": 890795520,
+  "trainable_pct": 0.2446,
+  "peak_gpu_memory_mb": 5943.044921875,
+  "train_time_sec": 389.6837110519409,
+  "why_full_finetuning_would_not_fit": "Full fine-tuning would make all 890,795,520 base parameters trainable (100% vs. 0.2446% here). Adam's 2 extra fp32 moment buffers per trainable parameter alone would need roughly 8 bytes x total_params just for optimizer state (~12+ GB for a 1.5B model), before gradients or activations -- multiples of the 5943 MB peak measured for LoRA+4-bit above, and would not fit the 'modest hardware' budget this project targets."
+}

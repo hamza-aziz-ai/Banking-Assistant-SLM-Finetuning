@@ -1,0 +1,100 @@
+prompt_id,prompt_type,system,response,domain_correctness,instruction_format_adherence,completeness,hallucination
+B1,in_domain_factual,C_finetuned_slm_v2,"Hello! Welcome to our team of virtual assistants at NovaBank. I'm here to assist you in activating your newly received debit card. Here's what you need to do:
+
+1. Visit our website or mobile app.
+2. Log in using your credentials.
+3. Navigate to the ""Debit Cards"" section.
+4. Look for the option related to activating your new card.
+5. Follow the instructions provided on the screen.
+
+If you encounter any difficulties during this process, please don't hesitate to reach out to our customer service team at 1-800-555-0199 or through the Live Chat available on our website. They will be more than happy to guide you through the activation process and address any concerns you may have.
+
+Have a great day!",2,2,2,2
+B2,in_domain_factual,C_finetuned_slm_v2,"Hello! I'm here to assist you in applying for a home loan with NovaBank. To get started, please provide me with some information:
+
+1. Your personal details such as name, address, and contact number.
+2. The purpose of your home loan application.
+3. Any specific requirements or preferences related to the property you're interested in.
+
+Once I have this information, I'll be able to guide you through the process and determine if you meet our eligibility criteria. We strive to make the application process as smooth as possible!
+
+If you have any further questions or concerns, feel free to let me know.",0,2,0,2
+B3,in_domain_factual,C_finetuned_slm_v2,"I'm sorry to hear that your card was swallowed by an ATM. Here's what you should do:
+
+1. Contact the bank immediately: Reach out to the bank where the ATM is located or their customer service team as soon as possible. They will guide you through the necessary steps to retrieve your card.
+
+2. Provide them with all relevant information: When contacting the bank, make sure to provide them with details such as the name of the ATM, the date it was swallowed, and any other relevant information they may need.
+
+3. Follow their instructions: The bank will give you specific instructions on how to proceed. This might involve visiting the nearest branch or using a special number provided by the bank.
+
+4. Monitor your account activity: Keep an eye on your account for any unusual transactions or suspicious activities. It's important to stay informed so you can address any issues promptly.
+
+5. Consider reporting the incident to the police: If the situation seems serious or if there were any unauthorized transactions, consider reporting it to the local police department. They can assist in investigating the case and taking appropriate action.
+
+Remember, it's crucial to act quickly when dealing with this type of emergency. Your safety and the security of your funds are our top priorities.",2,2,2,2
+B4,formatting_sensitive,C_finetuned_slm_v2,"1. Log in to your online banking account.
+2. Look for the ""Forgot Password"" option on the login page.
+3. Click on it to initiate the password recovery process.
+4. Follow the instructions provided by our website to create a new password.",2,2,2,2
+B5,reasoning,C_finetuned_slm_v2,"Hello! Thank you for reaching out. I'm here to assist you with your financial transactions.
+
+To determine if you have enough balance for both the transfer and the phone bill, let's break it down:
+
+1. Checking Account Balance: You currently have $500 in your checking account.
+2. Transfer Amount: You plan to transfer $300 from your checking account to your savings account.
+3. Phone Bill: The phone bill amounts to $250.
+
+Let's calculate:
+- After transferring $300 to savings, your remaining balance in checking will be $500 - $300 = $200.
+- Now, subtracting the $250 phone bill from your remaining balance in checking, you'll have $200 - $250 = -$50.
+
+Based on this calculation, you don't have enough balance left in your checking account to cover both the transfer and the phone bill. You would need an additional $75 ($250 - $175) to make the payment without exceeding your available funds.
+
+To proceed with the transfer and paying the phone bill, please follow these steps:
+
+1. Log in to your online banking or mobile app.
+2. Navigate to the ""Transfer"" section.
+3. Enter the recipient's information and select the appropriate amount ($300).
+4. Confirm the transfer and wait for the transaction to process.
+5. Once the transfer is successful, log back",2,2,2,1
+B6,out_of_scope,C_finetuned_slm_v2,"I'm here to assist you in creating delicious chocolate chip cookies! Here's a simple recipe that should bring joy to your kitchen:
+
+Ingredients:
+- 2 cups all-purpose flour
+- 1 teaspoon baking soda
+- 1/2 teaspoon salt
+- 1 cup granulated sugar
+- 1/2 cup brown sugar, packed
+- 3 large eggs
+- 1 teaspoon pure vanilla extract
+- 1 cup semisweet chocolate chips
+
+Instructions:
+1. Preheat your oven to 375°F (190°C) and line a cookie sheet with parchment paper.
+2. In a medium bowl, whisk together the flour, baking soda, and salt.
+3. In a large mixing bowl, combine the sugars and mix until well combined.
+4. Add the eggs, vanilla extract, and melted butter to the sugar mixture and stir until smooth.
+5. Gradually add the dry ingredients to the wet ingredients, stirring just until the dough comes together.
+6. Fold in the chocolate chips.
+7. Drop rounded tablespoonfuls of dough onto the prepared cookie sheet, spacing them about 2 inches apart.
+8. Bake for 8-10 minutes or until the edges are set but the centers are still slightly soft.
+9. Remove from the oven and let cool on the cookie sheet for 2-3 minutes before transferring to a wire rack to cool completely.
+
+Enjoy your freshly baked chocolate chip cookies! They're sure to be a hit at",0,2,0,2
+B7,in_domain_factual,C_finetuned_slm_v2,"Hello! I'm here to explain the differences between blocking a credit card and canceling it.
+
+Blocking a credit card means temporarily preventing unauthorized transactions or activities on your account. This action helps protect your financial security by limiting access to your card until you can address any issues. Blocking a credit card allows you to monitor your spending and take necessary measures to secure your funds.
+
+Cancelling a credit card involves permanently ending your association with that particular card. Once cancelled, you will no longer be able to use that specific card for purchases or make payments. Cancelling a credit card may have consequences such as losing access to rewards programs, interest-free periods, or other benefits associated with the card.
+
+It's important to note that cancelling a credit card should be done carefully, especially if there are outstanding balances or charges remaining on the card. It's always best to consult with our customer service team at 1-800-555-0199 to discuss your options and ensure a smooth cancellation process.
+
+If you need further assistance or have any additional questions regarding these actions, please don't hesitate to reach out to our dedicated customer support team. They'll be more than happy to guide you through the process and provide personalized advice based on your specific situation.",2,2,2,2
+B8,in_domain_factual,C_finetuned_slm_v2,"Of course! Disputing an ATM withdrawal that you didn't make is important for protecting your financial security. Here's what you need to do:
+
+1. Contact our Customer Service team at 1-800-555-0199 or visit our website at www.novabank.com.
+2. Provide them with details of the disputed transaction, such as the date, time, location, and any other relevant information.
+3. They will guide you through the necessary steps to initiate the dispute process.
+4. Our representatives may ask for additional documentation or verification to ensure the accuracy of the claim.
+
+Remember, it's crucial to act quickly when disputing an ATM withdrawal. The sooner we receive your complaint, the faster we can investigate and take appropriate action on your behalf.",2,2,2,2

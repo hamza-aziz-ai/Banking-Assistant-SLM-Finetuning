@@ -1,0 +1,4 @@
+,domain_correctness,instruction_format_adherence,completeness,hallucination,grand_total
+A_base_slm,13.0,16.0,13.0,12.0,54.0
+B_reference_llm,16.0,16.0,16.0,16.0,64.0
+C_finetuned_slm_v2,12.0,16.0,12.0,15.0,55.0

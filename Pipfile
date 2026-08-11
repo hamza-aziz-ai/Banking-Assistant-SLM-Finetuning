@@ -30,7 +30,8 @@ matplotlib = "*"
 scikit-learn = "*"
 bert-score = "*"  # optional semantic-similarity metric alongside ROUGE-L; see Notebook 05
 torch = {version = "*", index = "downloadpytorch"}
-torchtext = {version = "*", index = "downloadpytorch"}
+hf-transfer = "*"
+pandas-stubs = "~=3.0.5"
 
 [dev-packages]
 # Notebook validation only (used by e.g. `nbformat.validate(...)` sanity checks) -- not needed to

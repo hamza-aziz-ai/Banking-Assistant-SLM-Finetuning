@@ -119,11 +119,50 @@ pipenv lock
 ## Current state (update this section as work progresses)
 
 - [x] Task 1 — dataset built, cleaned, split, executed with real outputs; exported to `.py`/`.pdf`.
-- [ ] Task 2 — notebook written and syntax-validated; **not yet run** in the Virtual Lab.
-- [ ] Task 3 — notebook written and syntax-validated; **not yet run**. No adapter exists in `models/` yet.
-- [ ] Task 4 — notebook written and syntax-validated; **not yet run**. Depends on Task 3's v1 adapter.
-- [ ] Task 5 — notebook written and syntax-validated; **not yet run**. Depends on Task 4's v2 adapter.
-- [ ] Report — template exists in `report/`; needs real content from the above runs before export.
-- [ ] Screenshots — `screenshots/` folder exists and is empty; needs Virtual Lab captures.
+- [x] Task 2 — executed **locally** (RTX 4050 Laptop GPU, 6GB), not the Virtual Lab (see below). Real
+      A/B outputs in `results/task2_baseline_responses.json`, gap table filled in the notebook.
+- [x] Task 3 — executed locally. v1 adapter in `models/novabank-slm-lora-v1/`, efficiency numbers in
+      `results/task3_efficiency_summary.json`, loss curve in `img/v1_training_loss.png`.
+- [x] Task 4 — executed locally. v2 adapter in `models/novabank-slm-lora-v2/`, diagnosis/change-log/
+      before-after all filled in the notebook from real v1/v2 outputs.
+- [x] Task 5 — executed locally. Rubric scores, ROUGE-L, error analysis, verdict all filled in the
+      notebook from real A/B/C outputs; totals in `results/task5_rubric_totals.csv`.
+- [x] Report — `report/Assignment-2-Report-Template.md` filled from real results, exported to
+      `report/Assignment-2-Report.pdf` (via HTML + Playwright locally; pandoc/LaTeX weren't available
+      for the usual `--to pdf` path).
+- [ ] Screenshots — `screenshots/` still empty. **Needs the user**: full-screen screenshots of the
+      Virtual Lab's no-GPU + full-disk blockers (see "Deviation from PS2 Section 3" below), for report
+      Appendix C. Also still needed: Name/BITS ID on the report cover.
 
-If you're picking this project back up: check which `results/task*.json` and `models/*` files exist to see what's actually been run before assuming the state above is still current.
+### Deviation from PS2 Section 3 — why this ran locally, not in the Virtual Lab
+
+The assigned Virtual Lab instance had **no GPU** (`lspci` showed only the standard AWS EC2 virtual
+display adapter, no NVIDIA device) and its **root disk was full** (32GB volume, 172K free — `pipenv`/
+`pip` caches from repeated install attempts had eaten ~21GB, no room to install the ML stack or
+download model weights). This was raised with the user mid-session; they confirmed it, closed other
+GPU-using apps on their laptop, and directed Tasks 2-5 to run locally on their **RTX 4050 Laptop GPU
+(6GB VRAM)** instead, with the VL failure documented and screenshotted as proof of the deviation
+(report Appendix C already has the written explanation — screenshots still need attaching by the
+user). If revisiting this repo: the `models/`, `results/`, `img/*_training_loss.png` files reflect a
+**real, non-fabricated local run** — same pinned deps (`Pipfile.lock`), same `SEED=42`, same models.
+
+Getting there took several real debugging rounds worth knowing about if the environment changes again:
+- `torchtext` was dropped from `Pipfile` (unused, unmaintained, broke `pipenv lock` on Python 3.14).
+- `HF_HUB_ENABLE_HF_TRANSFER=1` was added (`src/config.py`) after the plain downloader repeatedly
+  stalled/duplicated retries on a large (~15GB) model download; when hf_transfer itself later hung
+  silently on one attempt, the fallback was the standalone `hf download` CLI (not `huggingface-cli`,
+  which is deprecated) run once to warm the cache before letting the notebook load from disk.
+- `model_utils.load_causal_lm` forces `device_map={"": 0}` for 4-bit loads instead of `"auto"` --
+  `infer_auto_device_map`'s conservative padding otherwise splits the 7B reference model across
+  GPU+CPU on a near-full 6GB card even though it fits whole, and that CPU-offload path hit three
+  distinct crashes in the installed accelerate/bitsandbytes versions (a blocked state-dict validation,
+  a meta-tensor in the nested quant state, then a meta tensor mid-`generate()`).
+- `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` (`src/config.py`) guards against allocator
+  fragmentation across the repeated load/unload cycles in notebooks 02 and 05.
+- PDF export used `jupyter nbconvert --to html` + a standalone Playwright script (see
+  `scratchpad/export_pdfs.py`-style approach) instead of `--to pdf` directly, because nbconvert's
+  async event loop (forced to `WindowsSelectorEventLoopPolicy` for zmq) is incompatible with
+  Playwright's subprocess-based browser launch on Windows when run *inside* nbconvert's process.
+
+If you're picking this project back up: check which `results/task*.json` and `models/*` files exist to
+see what's actually been run before assuming the state above is still current.

@@ -1,0 +1,87 @@
+prompt_id,prompt_type,system,response,domain_correctness,instruction_format_adherence,completeness,hallucination
+B1,in_domain_factual,B_reference_llm,"To activate your new NovaBank debit card, follow these steps:
+
+1. **Call Customer Service**: Dial 800-526-3226 to speak with a representative who can guide you through the activation process over the phone.
+
+2. **Visit a Branch**: You can also visit any NovaBank branch where a teller will assist you in activating your card.
+
+3. **Online Activation**: Log into your online banking account at novabank.com. Look for the ""Card Services"" or ""Debit Card Services"" section and follow the instructions provided there to activate your card.
+
+4. **Mobile App**: If you have downloaded the NovaBank mobile app, open it and look for options related to card management or services. There should be an option to activate your new card within the app.
+
+Once activated, you can start using your card for transactions. Remember to keep your PIN confidential and change it if you haven't done so already by following the prompts during the activation process.",2,2,2,2
+B2,in_domain_factual,B_reference_llm,"To apply for a home loan with NovaBank, you will typically need to provide the following documents:
+
+1. **Proof of Income**: W-2 forms, pay stubs, or tax returns from the past two years.
+2. **Identification**: A government-issued ID such as a driver's license or passport.
+3. **Employment Verification**: Letter from your current employer or recent employment history.
+4. **Credit Report Authorization**: Consent to allow NovaBank to pull your credit report.
+5. **Bank Statements**: Recent bank statements showing your financial activity.
+6. **Down Payment Savings**: Documentation of funds available for the down payment and closing costs.
+7. **Property Information**: Proof of property ownership if applicable, or details about the property you plan to purchase.
+
+Itâ€™s best to check directly with NovaBank for their specific requirements, as they may have additional or different documentation needs depending on your individual circumstances.",2,2,2,2
+B3,in_domain_factual,B_reference_llm,"If an ATM has swallowed your card, hereâ€™s what you should do:
+
+1. **Stay Calm**: Do not panic.
+2. **Check for the Card**: Look around the ATM area to see if your card is nearby or on the ground.
+3. **Contact NovaBank**: Call our customer service line at [insert phone number] to report the issue. They will guide you through the next steps.
+4. **Follow Up**: Keep track of any communication from the bank regarding your card retrieval.
+5. **Secure Your Account**: Consider changing your PIN or updating your account details as a precaution.
+
+We apologize for any inconvenience this may have caused. Please let us know if you need further assistance!",2,2,2,2
+B4,formatting_sensitive,B_reference_llm,"1. Log in to your NovaBank Online Banking account.
+2. Click on ""Settings"" or ""Profile"" in the menu.
+3. Select ""Change Password"" or similar option.
+4. Follow the prompts to set a new password.",2,2,2,2
+B5,reasoning,B_reference_llm,"To ensure you have enough balance for both transactions, let's break it down:
+
+1. **Transfer $300 from Checking to Savings:**
+   - You currently have $500 in your checking account.
+   - After transferring $300 to savings, your checking account will have:
+     \[
+     \$500 - \$300 = \$200
+     \]
+
+2. **Pay $250 Phone Bill from Checking:**
+   - After the transfer, you have $200 left in your checking account.
+   - Paying a $250 phone bill would require:
+     \[
+     \$200 - \$250 = -\$50
+     \]
+   - This results in an overdraft of $50.
+
+**Conclusion:**
+- Yes, you have enough balance to perform the first transaction (transfer $300 to savings), but not the second one (pay $250 phone bill) because after the transfer, you'll be short by $50.
+
+**Order of Transactions:**
+- It doesn't matter which transaction you do first as long as you don't exceed your available balance before performing any transaction. However, if you need to prioritize, you might consider paying the phone bill last or finding another way to cover the shortfall.
+
+If you proceed with the transfer first, you must ensure that you have at least $250 remaining in your checking account when you",2,2,2,2
+B6,out_of_scope,B_reference_llm,"I'm sorry, but I can only provide information related to NovaBank's banking services. For a recipe for chocolate chip cookies, you might want to check out cooking websites or food blogs that offer recipes. Enjoy baking!",2,2,2,2
+B7,in_domain_factual,B_reference_llm,"At NovaBank, blocking a credit card and canceling a credit card serve different purposes:
+
+1. **Blocking a Credit Card**: When you block a credit card, it temporarily suspends its use until you unblock it. This means that no transactions can be processed through the blocked card during this period. You might choose to block your card if you suspect fraudulent activity or if you need to take a break from using the card for personal reasons.
+
+2. **Canceling a Credit Card**: Canceling a credit card permanently ends its functionality and removes it from your account. Once canceled, the card cannot be used for any transactions, and the account associated with the card will close. Cancellation typically involves returning the physical card and updating your records to reflect the change in status.
+
+If you need to either block or cancel your credit card, please contact our customer service team at [phone number] or log into your online banking account to manage your card settings.",2,2,2,2
+B8,in_domain_factual,B_reference_llm,"Certainly! Hereâ€™s how you can dispute an unauthorized ATM withdrawal from NovaBank:
+
+1. **Contact Us Immediately**: Call our Customer Service line at [insert phone number] as soon as possible to report the unauthorized transaction.
+
+2. **Provide Details**: When you call, be prepared to provide details such as:
+   - The date of the transaction.
+   - The amount withdrawn.
+   - Any account numbers or card numbers related to the transaction.
+   - A brief description of why you believe it was unauthorized.
+
+3. **Follow Up in Writing**: After your initial call, follow up by sending a written statement to us via certified mail or email. Include all relevant information and any supporting documents like receipts or statements.
+
+4. **Review Your Account**: Keep an eye on your account for any further transactions or communications regarding this issue. You may receive a fraud alert or additional steps to take.
+
+5. **Secure Your Account**: Consider changing your password or PIN if you havenâ€™t already done so. This helps prevent future unauthorized access.
+
+6. **Stay Informed**: Stay informed about any updates from NovaBank regarding the status of your dispute. They will inform you once they have investigated the matter.
+
+If you need more assistance or have other questions about banking services, feel free to ask!",2,2,2,2
