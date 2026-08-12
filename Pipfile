@@ -32,6 +32,11 @@ bert-score = "*"  # optional semantic-similarity metric alongside ROUGE-L; see N
 torch = {version = "*", index = "downloadpytorch"}
 hf-transfer = "*"
 pandas-stubs = "~=3.0.5"
+# Windows-only terminal PTY backend for jupyter's terminado dependency. Pinned
+# with an explicit platform marker because pipenv's resolver has dropped this
+# transitive marker before, which then makes `pipenv install` try (and fail)
+# to build it from source on Linux Virtual Lab hosts -- it has no Linux support.
+pywinpty = {version = "*", markers = "sys_platform == 'win32'"}
 
 [dev-packages]
 # Notebook validation only (used by e.g. `nbformat.validate(...)` sanity checks) -- not needed to
