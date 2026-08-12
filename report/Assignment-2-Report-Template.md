@@ -332,8 +332,12 @@ repeated dependency install attempts, with no room left to install `torch`/`tran
 `bitsandbytes` or download model weights). Running a 1.5B/7B-parameter model fine-tuning and
 inference workload on that CPU-only, disk-exhausted instance was not feasible in any practical
 timeframe (full fine-tuning-scale runs would take on the order of days on CPU, per PS2's own domain
-requirements). Screenshots of both blocking conditions, taken on the Virtual Lab before the switch,
-are attached as proof.
+requirements). **Re-verified on a second, independent Virtual Lab session** (host `2024ac05133`,
+Rocky Linux 9.5) the following morning: the disk-full issue had a separate root cause (a broken
+package build repeatedly re-filling the pipenv cache -- fixed, see `Pipfile`'s `pywinpty` platform
+marker), but the GPU absence reproduced identically (`nvidia-smi: command not found`) -- confirming
+this is a property of the assigned instance, not a transient fault. Screenshots of the blocking
+condition(s), taken on the Virtual Lab, are attached as proof.
 
 Tasks 2-5 were instead executed locally on an **NVIDIA GeForce RTX 4050 Laptop GPU (6GB VRAM)**, using
 the same pinned dependency versions (`Pipfile`/`Pipfile.lock`), the same `SEED=42` reproducibility

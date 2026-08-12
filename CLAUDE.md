@@ -131,8 +131,8 @@ pipenv lock
       `report/Assignment-2-Report.pdf` (via HTML + Playwright locally; pandoc/LaTeX weren't available
       for the usual `--to pdf` path).
 - [ ] Screenshots — `screenshots/` still empty. **Needs the user**: full-screen screenshots of the
-      Virtual Lab's no-GPU + full-disk blockers (see "Deviation from PS2 Section 3" below), for report
-      Appendix C. Also still needed: Name/BITS ID on the report cover.
+      Virtual Lab's no-GPU blocker (see "Deviation from PS2 Section 3" below), for report Appendix C.
+      Group/BITS IDs are done (Group 174, filled 2026-08-12).
 
 ### Deviation from PS2 Section 3 — why this ran locally, not in the Virtual Lab
 
@@ -141,7 +141,11 @@ display adapter, no NVIDIA device) and its **root disk was full** (32GB volume, 
 `pip` caches from repeated install attempts had eaten ~21GB, no room to install the ML stack or
 download model weights). This was raised with the user mid-session; they confirmed it, closed other
 GPU-using apps on their laptop, and directed Tasks 2-5 to run locally on their **RTX 4050 Laptop GPU
-(6GB VRAM)** instead, with the VL failure documented and screenshotted as proof of the deviation
+(6GB VRAM)** instead. **Re-verified independently the next morning** on a fresh VL session
+(`2024ac05133`, Rocky Linux 9.5): disk was no longer full (12G free, 65% used, after the pywinpty fix
+below stopped a broken build loop from re-eating it) but `nvidia-smi: command not found` again --
+same no-GPU conclusion, now confirmed twice, not a one-off blip. The VL failure is documented and
+still needs the user's screenshot as proof of the deviation
 (report Appendix C already has the written explanation — screenshots still need attaching by the
 user). If revisiting this repo: the `models/`, `results/`, `img/*_training_loss.png` files reflect a
 **real, non-fabricated local run** — same pinned deps (`Pipfile.lock`), same `SEED=42`, same models.
