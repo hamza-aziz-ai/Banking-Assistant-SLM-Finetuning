@@ -1,7 +1,14 @@
 # PS2: Parameter-Efficient Fine-Tuning of a Small Language Model with Iterative Improvement
 ### BITS Pilani WILP M.Tech. AIML -- Conversational AI (AIMLCZG521) -- Assignment 2
 
-**Name:** Hamza Aziz  **BITS ID:** _______________ *(fill in -- not derivable from anything in this repo or session)*  **Date:** 2026-08-12
+**Group:** 174  **Date:** 2026-08-12
+
+| Name | BITS ID |
+|---|---|
+| Hamza Aziz | 2024AC05133 |
+| Pathan Rafeen | 2024AC05063 |
+| MD Fareed Farooqui | 2024AA05998 |
+| Manish Kumawat | 2024AC05113 |
 
 ---
 

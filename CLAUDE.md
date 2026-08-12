@@ -4,7 +4,7 @@ This file gives Claude Code (or any agent working in this repo) the context need
 
 ## What this project is
 
-Solution to **PS2: Parameter-Efficient Fine-Tuning of a Small Language Model with Iterative Improvement**, an individual assignment for BITS Pilani WILP M.Tech. AIML, course *Conversational AI (AIMLCZG521)*, Assignment 2 (10 marks). The problem statement is `Problem-Statement.pdf` at the repo root — read it before changing scope, task boundaries, or marks-relevant deliverables.
+Solution to **PS2: Parameter-Efficient Fine-Tuning of a Small Language Model with Iterative Improvement**, a group assignment (Group 174: Hamza Aziz 2024AC05133, Pathan Rafeen 2024AC05063, MD Fareed Farooqui 2024AA05998, Manish Kumawat 2024AC05113) for BITS Pilani WILP M.Tech. AIML, course *Conversational AI (AIMLCZG521)*, Assignment 2 (10 marks). The problem statement is `Problem-Statement.pdf` at the repo root — read it before changing scope, task boundaries, or marks-relevant deliverables.
 
 The assignment's central question: can a small language model (SLM), parameter-efficiently fine-tuned on ~300 domain examples, close the quality gap to a much larger pretrained reference LLM on domain tasks? This repo builds a **NovaBank retail-banking customer-support assistant** to test that question end-to-end: dataset → baseline benchmark → LoRA fine-tune (v1) → diagnose & improve (v2) → three-way evaluation and verdict.
 

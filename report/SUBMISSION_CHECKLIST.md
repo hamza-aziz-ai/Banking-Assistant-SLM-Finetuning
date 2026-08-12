@@ -30,5 +30,5 @@ Per the Problem Statement's "General Instructions" (Section 2 -- mandatory submi
 - [x] Every non-default config value (adapter rank, LR, epochs, etc.) has a 1-2 line justification
 - [x] All datasets/models/papers/docs cited (see README.md Section 6 / report Appendix B)
 - [x] No fabricated or cherry-picked outputs -- every quoted model response actually came from a run
-- [ ] **Name / BITS ID** on the report cover -- **user-supplied, not automatable**
-- [ ] Report Appendix C (execution-environment deviation) disclosed -- **written, needs your Virtual Lab screenshots attached alongside it**
+- [x] Group / member BITS IDs on the report cover (Group 174, 4 members)
+- [ ] Report Appendix C (execution-environment deviation) disclosed -- **written, needs Virtual Lab screenshots saved into `screenshots/` and referenced** (one no-GPU screenshot confirmed shown in chat 2026-08-12 -- needs saving to disk; still need the full-disk `df -h` shot too, or a fresh pair if the retry succeeds)
