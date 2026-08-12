@@ -12,8 +12,7 @@ Per the Problem Statement's "General Instructions" (Section 2 -- mandatory submi
   - [x] exported PDF of the executed notebook (`jupyter nbconvert --to pdf` -- via HTML+Playwright locally, pandoc/LaTeX unavailable)
 - [x] Saved fine-tuned adapters: `models/novabank-slm-lora-v1/`, `models/novabank-slm-lora-v2/`
       (or a download link if size-restricted -- document the link + path in the report)
-- [ ] **Full-screen screenshots**: Virtual Lab's no-GPU + full-disk blockers (proof for report Appendix C)
-      -- **user-supplied, not automatable**
+- [x] **Full-screen screenshot**: Virtual Lab's no-GPU blocker, `screenshots/vl_no_gpu_confirmation.png`
 
 ## Per-task self-check (does the report actually contain...)
 
@@ -31,4 +30,5 @@ Per the Problem Statement's "General Instructions" (Section 2 -- mandatory submi
 - [x] All datasets/models/papers/docs cited (see README.md Section 6 / report Appendix B)
 - [x] No fabricated or cherry-picked outputs -- every quoted model response actually came from a run
 - [x] Group / member BITS IDs on the report cover (Group 174, 4 members)
-- [ ] Report Appendix C (execution-environment deviation) disclosed -- **written, needs Virtual Lab screenshots saved into `screenshots/` and referenced** (one no-GPU screenshot confirmed shown in chat 2026-08-12 -- needs saving to disk; still need the full-disk `df -h` shot too, or a fresh pair if the retry succeeds)
+- [x] Report Appendix C (execution-environment deviation) disclosed, with real Virtual Lab screenshot
+      (`screenshots/vl_no_gpu_confirmation.png`, 2026-08-12 09:01, host `2024ac05133`) embedded in Appendix A

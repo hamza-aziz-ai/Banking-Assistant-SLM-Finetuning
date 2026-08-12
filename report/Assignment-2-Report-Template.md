@@ -309,11 +309,11 @@ practical deployment path this evidence supports.
 
 ## Appendix A -- Virtual Lab Screenshots
 
-**Not applicable in the usual sense -- see Appendix C.** The BITS Virtual Lab instance assigned for
-this course had no NVIDIA GPU (`lspci` showed only the standard AWS EC2 virtual display adapter, no
-CUDA device) and its root disk was at 100% capacity (172K free of 32GB) with no usable space to install
-the ML dependency stack. Screenshots of these two blocking conditions on the Virtual Lab, taken before
-switching to local execution, are attached separately per the instructions in Appendix C.
+The BITS Virtual Lab instance assigned for this course had no NVIDIA GPU (`lspci` showed only the
+standard AWS EC2 virtual display adapter, no CUDA device) and, on the first session, its root disk was
+at 100% capacity (172K free of 32GB). See Appendix C for the full explanation and timeline.
+
+![Virtual Lab (host 2024ac05133, Rocky Linux 9.5), 2026-08-12 09:01 -- `pywinpty` install fix working, then `nvidia-smi: command not found`, then `df -h /` showing disk no longer full (8.6G free)](../screenshots/vl_no_gpu_confirmation.png)
 
 ## Appendix B -- References
 1. Bitext Innovations International, S.L. *Retail Banking LLM Chatbot Training Dataset* (2024). Hugging
