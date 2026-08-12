@@ -315,6 +315,19 @@ at 100% capacity (172K free of 32GB). See Appendix C for the full explanation an
 
 ![Virtual Lab (host 2024ac05133, Rocky Linux 9.5), 2026-08-12 09:01 -- `pywinpty` install fix working, then `nvidia-smi: command not found`, then `df -h /` showing disk no longer full (8.6G free)](../screenshots/vl_no_gpu_confirmation.png)
 
+Disk headroom alone wasn't the whole story: even with the pywinpty issue fixed and 8.6GB nominally
+free, actually attempting Task 2 (loading the 7B reference model, ~15.2GB) on this Virtual Lab
+instance ran out of disk mid-download:
+
+![Notebook 02 running in JupyterLab on the Virtual Lab -- Qwen2.5-7B-Instruct download in progress, "Reconstructing (incomplete total...): 60%, 9.20GB / 15.2GB"](../screenshots/vl_disk_full_download_progress.png)
+
+![The download fails: `RuntimeError: Task error: File reconstruction error: IO Error: No space left on device (os error 28)`](../screenshots/vl_disk_full_error.png)
+
+This is direct, first-hand proof (not just a `df -h` reading) that the assigned Virtual Lab instance
+cannot fit this project's reference model regardless of the GPU issue -- the 32GB root volume has no
+room for a 15GB model download alongside the OS, the pipenv/ML dependency stack, and the SLM's own
+cache.
+
 ## Appendix B -- References
 1. Bitext Innovations International, S.L. *Retail Banking LLM Chatbot Training Dataset* (2024). Hugging
    Face Datasets.
@@ -336,8 +349,13 @@ requirements). **Re-verified on a second, independent Virtual Lab session** (hos
 Rocky Linux 9.5) the following morning: the disk-full issue had a separate root cause (a broken
 package build repeatedly re-filling the pipenv cache -- fixed, see `Pipfile`'s `pywinpty` platform
 marker), but the GPU absence reproduced identically (`nvidia-smi: command not found`) -- confirming
-this is a property of the assigned instance, not a transient fault. Screenshots of the blocking
-condition(s), taken on the Virtual Lab, are attached as proof.
+this is a property of the assigned instance, not a transient fault. With the pywinpty and stale-cache
+issues cleared, an actual attempt to run Notebook 02 in JupyterLab on that Virtual Lab session hit the
+same disk ceiling from a different angle: the 7B reference model download failed mid-transfer with
+`IO Error: No space left on device (os error 28)` at 9.2GB/15.2GB -- the 32GB volume genuinely cannot
+hold this project's model weights alongside its OS and dependency footprint, independent of the GPU
+question. Screenshots of all three blocking conditions, taken on the Virtual Lab, are attached as
+proof (Appendix A).
 
 Tasks 2-5 were instead executed locally on an **NVIDIA GeForce RTX 4050 Laptop GPU (6GB VRAM)**, using
 the same pinned dependency versions (`Pipfile`/`Pipfile.lock`), the same `SEED=42` reproducibility
