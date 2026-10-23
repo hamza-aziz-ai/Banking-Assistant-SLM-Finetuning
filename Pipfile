@@ -12,7 +12,7 @@ name = "downloadpytorch"
 # Notebook runtime/export -- notebooks are the primary deliverable (Tasks 1-5),
 # not just dev tooling, so these live in [packages] rather than [dev-packages].
 jupyter = ">=1.0"
-nbconvert = ">=7.16"
+nbconvert = ">=7.17.2"
 ipykernel = ">=6.29"
 # Core ML stack for LoRA/QLoRA fine-tuning and inference (Tasks 2-5).
 transformers = ">=4.44"
